@@ -1,0 +1,57 @@
+<html>
+
+
+<title>Titanic Passanger Survier</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<div class="content">
+    <h1 style="text-align: center">Check if Passenger Survived ?
+    </h1>
+
+    <div class="form">
+        <form action="/result" method="POST" >
+
+            <label for="Pclass">Passenger Class</label>
+            <select name="Pclass" id="Pclass">
+                <option value="1">1st class</option>
+                <option value="2">2nd class</option>
+                <option value="3">3rd class</option>
+            </select>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Passenger's Age" min="0">
+
+            <label for="SibSp">Number of Siblings/Spouses Aboard</label>
+            <input type="number" id="SibSp" name="SibSp" placeholder="Number of Siblings/Spouses Aboard" min="0">
+
+            <label for="parch">Number of Parents/Children Aboard</label>
+            <input type="number" id="parch" name="parch" placeholder="Number of Parents/Children Aboard" min="0">
+            
+            <p>Gender</p>
+            <input type='radio' id='male' name='gender' value='1'>
+            <label for='male'>MALE</label><br>
+            <input type='radio' id='female' name='gender' value='0'>
+            <label for='female'>female</label><br>
+            <br>
+
+            <label for="embark">Port of Embarkation</label>
+            <select name="embark" id="embark">
+                <option value="C">Cherbourg</option>
+                <option value="Q">Queenstown</option>
+                <option value="S">Southampton</option>
+            </select>
+
+            
+
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+
+    <div style='color:red;font-size:40px;margin: 0 auto;'>
+        {{result}}
+</div>
+
+
+</html>
+
+
